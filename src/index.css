@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-degen-background text-degen-text transition-colors duration-300;
+  }
+
+  body.vault-mode {
+    @apply bg-vault-background dark:bg-vault-dark text-vault-text;
+  }
+}
+
+@layer components {
+  .degen-card {
+    @apply bg-degen-surface border border-degen-border rounded-lg p-4;
+  }
+
+  .vault-card {
+    @apply bg-vault-surface border border-vault-border rounded-lg p-4 dark:bg-vault-dark;
+  }
+
+  .degen-btn {
+    @apply px-4 py-2 bg-degen-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity;
+  }
+
+  .vault-btn {
+    @apply px-4 py-2 bg-vault-accent text-white rounded-lg font-semibold hover:opacity-90 transition-opacity;
+  }
+
+  .glow-effect {
+    @apply animate-glow;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+body.vault-mode::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.5);
+}
+
+body.vault-mode::-webkit-scrollbar-thumb:hover {
+  background: rgba(5, 150, 105, 0.8);
+}
